@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #EEC9E9;
+    /*
+     ideas for background images
+     https://pixabay.com/id/illustrations/warna-merah-muda-putih-1030584/
+     */
+    font-size: 16px;
+    margin: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+nav {
+    margin: 1em;
+    padding: 1em 0;
+    text-align: center;
+    background: #B965A3
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 1em; /*0.0625em;*/
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    flex-grow: 1;
+}
+
+nav a {
+    border: 0.0625em solid #711515;
+    padding: 1.5em;
+    text-decoration: none;
+    color: white;
+    background: black;
+    white-space: nowrap;
+    display: block;
+}
+
+nav a:hover {
+    color: black;
+    background: white;
+}
+
+nav a[href=""] {
+    color: black;
+    background: white;
+}
+
+header h1 {
+    font-size: 4vw;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header p {
+    font-family: 'Orbitron', sans-serif;
+}
+
+#gallery section {
+    text-align: center;
+}
+/*
+#gallery {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}*/
+
+#gallery section + section {
+    padding-top: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#gallery figure {
+    width: 90%;
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 1em;
+}
+
+#gallery img, figcaption {
+    width: 60%;
+}
+
+#gallery figcaption {
+    margin-left: 20%;
+    font-size: 0.75em;
+}
+
+strong {
+    display: block;
+    font-size: 1.25em;
+}
+
+@media only screen and (max-width: 750px) {
+    #gallery img, #gallery figcaption {
+        width: 100%;
+    }
+    #gallery figcaption {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    #gallery img, #gallery figcaption {
+        width: 60%;
+    }
+    #gallery figcaption {
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #gallery img, #gallery figcaption {
+        width: 40%;
+    }
+    #gallery figcaption {
+        margin-left: 30%;
+    }
+}
+
