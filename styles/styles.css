@@ -17,6 +17,52 @@ body {
     color: black;
 }
 
+@media only screen and (min-width: 1125px) {
+    #index {
+        display: grid;
+        grid-template-columns: 20% 55% 25%;
+        grid-template-rows: auto;
+        grid-template-areas: "top top top"
+                             "middle-left middle-middle middle-right"
+                             "bottom bottom bottom"
+    }
+
+    #shop {
+        display: grid;
+        grid-template-columns: 20% 55% 25%;
+        grid-template-rows: auto;
+        grid-template-areas: "top top top"
+                             "middle-left middle-right middle-right"
+                             "bottom bottom bottom"
+    }
+
+    header {
+        grid-area: top;
+    }
+    
+    nav {
+        grid-area: middle-left;
+    }
+    
+    #index main {
+        grid-area: middle-middle;
+    }
+
+    #shop main {
+        grid-area: middle-right;
+    }
+    
+    #index aside {
+        margin-left: 1em;
+        grid-area: middle-right;
+    }
+    
+    footer {
+        grid-area: bottom;
+    }
+
+}
+
 nav {
     margin: 1em;
     padding: 1em 0;
@@ -30,16 +76,16 @@ nav ul {
 }
 
 nav ul {
-    display: flex;
+    /*display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;*/
     align-items: center;
     list-style: none;
 }
 
 nav li {
-    display: inline;
+    margin: 1em;
     flex-grow: 1;
 }
 
@@ -72,36 +118,54 @@ header p {
     font-family: 'Orbitron', sans-serif;
 }
 
-#gallery section {
+h2 {
+    margin-top: 1em;
+}
+
+p {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+article section {
     text-align: center;
 }
 /*
-#gallery {
+article {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }*/
+section article section {
+    border-bottom: 1em solid rebeccapurple;
+    border-top: 1em solid rebeccapurple;
+}
 
-#gallery section + section {
+aside ul {
+    padding-left: 1em;
+}
+
+article section + section {
     padding-top: 1em;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-#gallery figure {
+article figure {
     width: 90%;
     flex-direction: column;
     margin: auto;
     padding-bottom: 1em;
 }
 
-#gallery img, figcaption {
+article img, figcaption {
     width: 60%;
 }
 
-#gallery figcaption {
+article figcaption {
     margin-left: 20%;
     font-size: 0.75em;
 }
@@ -112,29 +176,61 @@ strong {
 }
 
 @media only screen and (max-width: 750px) {
-    #gallery img, #gallery figcaption {
+    article img, article figcaption {
         width: 100%;
     }
-    #gallery figcaption {
+    article figcaption {
         margin-left: 0;
     }
 }
 
 @media only screen and (min-width: 750px) {
-    #gallery img, #gallery figcaption {
+    article img, article figcaption {
         width: 60%;
     }
-    #gallery figcaption {
+    article figcaption {
         margin-left: 20%;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    #gallery img, #gallery figcaption {
+    article img, article figcaption {
         width: 40%;
     }
-    #gallery figcaption {
+    article figcaption {
         margin-left: 30%;
     }
 }
 
+@media only screen and (max-width: 675px) {
+    figure {
+        width: 90%;
+    }
+    iframe {
+        width: 100%;
+    }
+}
+
+/* Idea from
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+*/
+
+
+.vid {
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+    height: 0;
+    max-width: 1200px;
+    
+}
+
+.vid iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*größer als ~1200 Pixel sieht scheiße aus*/
